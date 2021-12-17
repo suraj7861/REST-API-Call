@@ -38,7 +38,8 @@ public class HelloRestController {
 
 	/**
 	 * @GetMapping: mapping HTTP GET requests onto specific handler methods
-	 * @PathVariable: indicates that a method parameter should be bound to a URI template variable.
+	 * @PathVariable: indicates that a method parameter should be bound to a URI
+	 *                template variable.
 	 * @param name
 	 * @return
 	 */
@@ -47,26 +48,25 @@ public class HelloRestController {
 		return "Hello " + name + " From Bridgelabz";
 	}
 
-    /**
-     * @PostMapping:handle the HTTP POST requests matched with given URI expression
-     * @RequestBody: 
-     * @return
-     */
-    @PostMapping("/post")
-    public String sayHello(@RequestBody User user) {
-        return "Hello " + user.getFirstName() + " " + user.getLastName() + " From Bridgelabz";
-    }
-    
-    /**
-     * @PutMapping:  mapping HTTP PUT requests onto specific handler methods.
-     * @param firstName
-     * @param lastName
-     * @return
-     */
-    @PutMapping("/put/{firstName}")
-    public String sayHello(@PathVariable String firstName,
-                           @RequestParam(value = "lastName") String lastName) {
-        return "Hello " + firstName + " " + lastName + " From bridgeLabz";
-    }
+	/**
+	 * @PostMapping:handle the HTTP POST requests matched with given URI expression
+	 * @RequestBody:
+	 * @return
+	 */
+	@PostMapping("/post")
+	public String sayHello(@RequestBody User user) {
+		return "Hello " + user.getFirstName() + " " + user.getLastName() + " From Bridgelabz";
+	}
+
+	/**
+	 * @PutMapping: mapping HTTP PUT requests onto specific handler methods.
+	 * @param firstName
+	 * @param lastName
+	 * @return
+	 */
+	@PutMapping("/put/{firstName}")
+	public String sayHello(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
+		return "Hello " + firstName + " " + lastName + " From bridgeLabz";
+	}
 
 }

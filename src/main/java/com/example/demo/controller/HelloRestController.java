@@ -55,4 +55,5 @@ public class HelloRestController {
     public String sayHello(@RequestBody User user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " From Bridgelabz";
     }
+   
 }

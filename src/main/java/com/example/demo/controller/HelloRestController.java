@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/hello")
 public class HelloRestController {
-	
+
 	@RequestMapping(value = { "", "/", "/home" })
 	public String sayHello() {
 		return "Hello From BridgeLabz";
@@ -31,15 +31,15 @@ public class HelloRestController {
 	public String sayHello(@RequestParam(value = "name") String name) {
 		return "Hello " + name + " From Bridgelabz";
 	}
-	
+
 	/**
 	 * @GetMapping: mapping HTTP GET requests onto specific handler methods
 	 * @param name
 	 * @return
 	 */
-    @GetMapping("/param/{name}")
-    public String sayHelloPara(@PathVariable String name) {
-        return "Hello " + name + " From Bridgelabz";
-    }
+	@GetMapping("/param/{name}")
+	public String sayHelloPara(@PathVariable String name) {
+		return "Hello " + name + " From Bridgelabz";
+	}
 
 }
